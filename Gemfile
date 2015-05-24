@@ -17,5 +17,5 @@ gem 'nokogiri'
 gem 'turbolinks'
 gem 'mechanize'
 
-gem 'mysql2',          '~> 0.3.13', :platform => :ruby
+gem 'mysql2', '~> 0.3.18'
 gem 'thinking-sphinx', '~> 3.1.0'
