@@ -1,0 +1,22 @@
+<% @title="HeadHunter Караганда" %>
+<h1><a href="/olx" class="hh">HeadHunter</a></h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Добавлено</th>
+      <th>Вакансия</th>
+      <th>Описание</th>
+      <th>Компания</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @hunter.each do |hunt| %>
+    <tr>
+      <td><%= hunt.at_css('.b-vacancy-list-date').text %></td>
+      <td><a href="<%= hunt.at_css('.search-result-item__name')[:href] %>"><%= hunt.at_css('.search-result-item__head').text %></a></td>
+      <td><%= hunt.at_css('.search-result-item__snippet').text %></a></td>
+      <td><%= hunt.at_css('.link-secondary').text %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

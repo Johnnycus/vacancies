@@ -1,0 +1,22 @@
+<% @title="Работа в Караганде" %>
+<h1><a href="/hh" class="olx">OLX</a></h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Добавлено</th>
+      <th>Вакансия</th>
+      <th>Категория</th>
+      <th>Зарплата</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @vacancies.each do |vacancy| %>
+    <tr>
+      <td><%= vacancy.at_css('.tcenter').text %></td>
+      <td><a href="<%= vacancy.at_css('.detailsLink')[:href] %>"><%= vacancy.at_css('.lheight20').text %></a></td>
+      <td><%= vacancy.at_css('.breadcrumb').text %></td>
+      <td><%= vacancy.at_css('.salary-label').text %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
